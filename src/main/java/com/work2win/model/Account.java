@@ -12,7 +12,6 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 public class Account {
 	
 	@PrimaryKey
-	private int id;
 	private int accountnum;
 	private String name;
 	private float balance;
@@ -21,20 +20,15 @@ public class Account {
 	public Account() {}
 	
 	@Autowired
-	public Account(int id, int accountnum, String name, float balance) {
+	public Account(int accountnum, String name, float balance) {
 		super();
-		this.id = id;
+		
 		this.accountnum = accountnum;
 		this.name = name;
 		this.balance = balance;
 	}
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public int getAccountnum() {
 		return accountnum;
 	}
